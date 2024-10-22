@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -106,9 +107,13 @@ public class MainActivity extends AppCompatActivity {
         if(hpick == cPick - 1 || hpick - 2 == cPick){
             computerWins++;
             computerCounter.setText(String.valueOf(computerWins));
+            Toast.makeText(MainActivity.this, "A computer nyert!", Toast.LENGTH_SHORT).show();
         } else if (hpick - 1 == cPick || hpick == cPick - 2) {
             humanWins++;
             humanCounter.setText(String.valueOf(humanWins));
+            Toast.makeText(MainActivity.this, "Az ember nyert!", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(MainActivity.this, "Döntetlen!", Toast.LENGTH_SHORT).show();
         }
     }
 
